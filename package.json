@@ -8,8 +8,9 @@
     "start:game": "vite build --watch",
     "build": "tsc && vite build",
     "preview": "vite preview"
-  },
+},
   "dependencies": {
+    "@emotion/react": "^11.11.1",
     "@iconify/react": "^6.0.2",
     "@mantine/core": "^5.10.0",
     "@mantine/dates": "^5.10.0",
