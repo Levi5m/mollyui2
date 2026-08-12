@@ -81,6 +81,11 @@ const Vanta: React.FC = () => {
     const [progressTop, setProgressTop] = React.useState("0%");
     const tabsRef = React.useRef<(HTMLDivElement | null)[]>([]);
 
+    // Single safe reference to the currently selected tab, used everywhere below
+    // instead of repeatedly indexing tabs[selectedIndex] (which TypeScript can't
+    // narrow as defined across separate expressions).
+    const selectedTab: Tab | undefined = tabs[selectedIndex];
+
     if (isEnvBrowser()) {
         React.useEffect(() => {
             setVisible(true);
@@ -358,11 +363,11 @@ const Vanta: React.FC = () => {
                                     </span>
                                 </div>
                             </div>
-                            <Transition mounted={visible && (!tabs[selectedIndex].metaData) && (tabs[selectedIndex].type != "subMenu" && tabs[selectedIndex].type != "divider" && tabs[selectedIndex].type != "slider" && tabs[selectedIndex].type != "scrollable")} transition="pop" duration={25} timingFunction="ease">
+                            <Transition mounted={visible && !selectedTab?.metaData && (selectedTab?.type != "subMenu" && selectedTab?.type != "divider" && selectedTab?.type != "slider" && selectedTab?.type != "scrollable")} transition="pop" duration={25} timingFunction="ease">
                                 {(dStyles) => (
                                     <div className="VDesc" style={dStyles}>
-                                        <span>{tabs[selectedIndex].desc}</span>
-                                        {(tabs[selectedIndex].type == "button" || tabs[selectedIndex].type == "checkbox" || tabs[selectedIndex].type == "scrollable-checkbox" || tabs[selectedIndex].type == "slider-checkbox") && (<span style={{ marginLeft: "12.65vw" }}>Press F5 to Bind</span>)}
+                                        <span>{selectedTab?.desc}</span>
+                                        {(selectedTab?.type == "button" || selectedTab?.type == "checkbox" || selectedTab?.type == "scrollable-checkbox" || selectedTab?.type == "slider-checkbox") && (<span style={{ marginLeft: "12.65vw" }}>Press F5 to Bind</span>)}
                                     </div>
                                 )}
                             </Transition>
@@ -394,16 +399,16 @@ const Vanta: React.FC = () => {
                                     ))
                                 )}
                             </div>
-                            <Transition mounted={tabs[selectedIndex] && tabs[selectedIndex].metaData && tabs[selectedIndex].metaData?.length > 0 || false} transition="fade" duration={0} timingFunction="ease">
+                            <Transition mounted={(selectedTab?.metaData?.length ?? 0) > 0} transition="fade" duration={0} timingFunction="ease">
                                 {(metadataStyles) => (
                                     <div className="Metadata" style={metadataStyles}>
                                         <div className="Title">
-                                            <span>{tabs[selectedIndex].name}</span>
+                                            <span>{selectedTab?.name}</span>
                                         </div>
                                         <div className="Line"></div>
                                         <div className="Values">
-                                            {tabs[selectedIndex] && tabs[selectedIndex].metaData && tabs[selectedIndex].metaData?.map((val, i) => (
-                                                <div className="Value">
+                                            {selectedTab?.metaData?.map((val, i) => (
+                                                <div className="Value" key={i}>
                                                     <div className="Key">{val.key}</div>
                                                     <div className="Val">
                                                         <span style={{ color: val.key == "Weapon" ? "#D82325" : "" }}>{val.value}</span>
