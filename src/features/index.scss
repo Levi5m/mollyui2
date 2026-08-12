@@ -1,0 +1,624 @@
+:root {
+    --menu-color: 152, 45, 234;
+}
+
+.VWrapper {
+    position: absolute;
+    display: flex;
+    left: 4vw;
+    top: 50%;
+    transform: translateY(-50%);
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: .4167vw;
+    font-family: "Readex Pro";
+
+    .VLeftElements {
+        position: relative;
+        display: flex;
+        width: 18.2292vw;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .VBanner {
+            position: relative;
+            display: flex;
+            width: 100%;
+            height: 5.4688vw;
+            justify-content: center;
+            align-items: center;
+            border-left: .0521vw solid rgba(11, 11, 11, 0.95);
+            border-top: .0521vw solid rgba(11, 11, 11, 0.95);
+            border-right: .0521vw solid rgba(11, 11, 11, 0.95);
+            border-top-left-radius: .4167vw;
+            border-top-right-radius: .4167vw;
+            overflow: hidden;
+
+            img {
+                position: absolute;
+                display: flex;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .VLeftInnerElements {
+            position: relative;
+            display: flex;
+            width: 100%;
+            height: auto;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            .VScroll {
+                position: absolute;
+                display: flex;
+                left: -0.8vw;
+                width: .5208vw;
+                height: 100%;
+                background-color: rgba(11, 11, 11, 0.95);
+                justify-content: flex-start;
+                align-items: center;
+                flex-direction: column;
+                gap: .1042vw;
+                border-radius: .1042vw;
+
+                i {
+                    font-size: .5208vw;
+                    color: white;
+                }
+
+                .VSProgress {
+                    position: relative;
+                    display: flex;
+                    width: .3125vw;
+                    height: 100%;
+                    margin-top: .1563vw;
+                    background-color: rgba(var(--menu-color), 0.70);
+                    transition: top 0.25s ease, height 0.25s ease;
+                    border-radius: .1042vw;
+                }
+            }
+            
+            .VHeader {
+                position: relative;
+                display: flex;
+                width: 100%;
+                height: 1.5625vw;
+                justify-content: center;
+                align-items: center;
+                background-color: rgba(11, 11, 11, 0.95);
+                border-top: .0521vw solid rgb(var(--menu-color));
+                border-bottom: .0521vw solid rgb(var(--menu-color));
+
+                .Path {
+                    position: absolute;
+                    display: flex;
+                    left: .7813vw;
+                    height: .6771vw;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: .5208vw;
+                    line-height: .625vw;
+                    align-items: center;
+                    color: #FFFFFF;
+                }
+
+                .Name {
+                    position: absolute;
+                    display: flex;
+                    right: .7813vw;
+                    height: .6771vw;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: .5208vw;
+                    line-height: .625vw;
+                    align-items: center;
+                    color: #FFFFFF;
+                }
+            }
+
+            .VTabs {
+                position: relative;
+                display: flex;
+                width: 100%;
+                height: auto;
+                max-height: 15.625vw;
+                justify-content: flex-start;
+                align-items: center;
+                flex-direction: column;
+                background-color: rgba(11, 11, 11, 0.95);
+                overflow: hidden;
+
+                .VTab {
+                    position: relative;
+                    display: flex;
+                    width: 100%;
+                    height: 1.5625vw;
+                    min-height: 1.5625vw;
+                    max-height: 1.5625vw;
+                    justify-content: center;
+                    align-items: center;
+
+                    &.Selected {
+                        .Icon {
+                            right: .625vw;
+                            color: white;
+                        }
+                    }
+
+                    .VTLabel {
+                        position: absolute;
+                        display: flex;
+                        left: .7813vw;
+                        height: .6771vw;
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: .5208vw;
+                        line-height: .625vw;
+                        align-items: center;
+                        color: #FFFFFF;
+                    }
+
+                    .Icon {
+                        position: absolute;
+                        display: flex;
+                        right: .7813vw;
+                        width: 1.0417vw;
+                        height: 1.0417vw;
+                        color: rgba(255, 255, 255, 0.60);
+                        transition: color 0.25s ease-in-out, right 0.25s;
+                    }
+
+                    .VOptions {
+                        position: absolute;
+                        display: flex;
+                        right: 0.65vw;
+                        width: 7.8125vw;
+                        justify-content: flex-end;
+                        align-items: center;
+                        flex-direction: row;
+                        gap: .5208vw;
+
+                        .Scrollable {
+                            position: relative;
+                            display: flex;
+                            right: 0.15vw;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: row;
+                            gap: .2604vw;
+                            font-size: .5208vw;
+                            font-weight: 500;
+                            color: white;
+                        }
+
+                        .Checkbox {
+                            position: relative;
+                            display: flex;
+                            right: 0vw;
+                            width: 1.5625vw;
+                            height: .7813vw;
+                            justify-content: center;
+                            align-items: center;
+                            background-color: #222224;
+                            border-radius: 5vw;
+
+                            &.Checked {
+                                .Inside {
+                                    left: 0.95vw;
+                                    background-color: rgb(var(--menu-color));
+                                }
+                            }
+
+                            .Inside {
+                                position: absolute;
+                                display: flex;
+                                left: 0.15vw;
+                                margin-bottom: 0.065vw;
+                                width: .4167vw;
+                                height: .4167vw;
+                                background-color: white;
+                                border-radius: .2604vw;
+                                transition: 0.25s all;
+                            }
+                        }
+
+                        .Slider {
+                            position: relative;
+                            display: flex;
+                            right: 0.15vw;
+                            width: 2.3438vw;
+                            height: .2083vw;
+                            justify-content: flex-start;
+                            align-items: center;
+                            background-color: #3a3a3a;
+                            border-radius: .2604vw;
+
+                            .Progress {
+                                position: absolute;
+                                display: flex;
+                                height: 100%;
+                                justify-content: center;
+                                align-items: center;
+                                background: rgb(225, 225, 225);
+                                border-radius: .2604vw;
+
+                                .Thumb {
+                                    position: absolute;
+                                    display: flex;
+                                    right: 0vw;
+                                    width: .4167vw;
+                                    height: .4167vw;
+                                    background-color: rgb(225, 225, 225);
+                                    border-radius: .5208vw;
+                                }
+                            }
+                        }
+                    }
+
+                    .Checkbox {
+                        position: absolute;
+                        display: flex;
+                        right: 0.65vw;
+                        width: 1.5625vw;
+                        height: .7813vw;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: #222224;
+                        border-radius: 5vw;
+
+                        &.Checked {
+                            .Inside {
+                                left: 0.95vw;
+                                background-color: rgb(var(--menu-color));
+                            }
+                        }
+
+                        .Inside {
+                            position: absolute;
+                            display: flex;
+                            left: 0.15vw;
+                            width: .4167vw;
+                            height: .4167vw;
+                            margin-top: .0417vw;
+                            background-color: white;
+                            border-radius: .2604vw;
+                            transition: 0.25s all;
+                        }
+                    }
+
+                    .Slider {
+                        position: absolute;
+                        display: flex;
+                        right: 0.65vw;
+                        width: 2.3438vw;
+                        height: .2083vw;
+                        justify-content: flex-start;
+                        align-items: center;
+                        background-color: #3a3a3a;
+                        border-radius: .2604vw;
+
+                        .Progress {
+                            position: absolute;
+                            display: flex;
+                            height: 100%;
+                            justify-content: center;
+                            align-items: center;
+                            background: rgb(225, 225, 225);
+                            border-radius: .2604vw;
+
+                            .Thumb {
+                                position: absolute;
+                                display: flex;
+                                right: 0vw;
+                                width: .4167vw;
+                                height: .4167vw;
+                                background-color: rgb(225, 225, 225);
+                                box-shadow: 0vw 0vw .1042vw .0521vw rgb(225, 225, 225);
+                                border-radius: .5208vw;
+                            }
+                        }
+                    }
+
+                    .Scrollable {
+                        position: absolute;
+                        display: flex;
+                        right: 0.65vw;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: row;
+                        gap: .2604vw;
+                        font-size: .5208vw;
+                        font-weight: 500;
+                        color: white;
+                    }
+
+                    .Divider {
+                        position: absolute;
+                        display: flex;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        display: flex;
+                        width: 92%;
+                        justify-content: space-between;
+                        align-items: center;
+                        flex-direction: row;
+                        gap: .2604vw;
+
+                        .Left, .Right {
+                            position: relative;
+                            display: flex;
+                            width: 25%;
+                            height: .026vw;
+                            background-color: rgb(225, 225, 225);
+                            border-radius: 5vw;
+                            min-width: 0;
+                        }
+
+                        .Label {
+                            position: relative;
+                            display: flex;
+                            font-size: .5208vw;
+                            font-weight: 525;
+                            color: rgb(225, 225, 225);
+                            white-space: nowrap;
+                            padding: 0 .5vw;
+                        }
+                    }
+                }
+            }
+
+            .VFooter {
+                position: relative;
+                display: flex;
+                width: 100%;
+                height: 1.5625vw;
+                background-color: rgba(11, 11, 11, 0.95);
+                border-top: .0521vw solid rgb(var(--menu-color));
+                border-bottom-left-radius: .4167vw;
+                border-bottom-right-radius: .4167vw;
+                justify-content: center;
+                align-items: center;
+
+                .Icon {
+                    position: absolute;
+                    display: flex;
+                    width: 1.0417vw;
+                    height: 1.0417vw;
+                }
+
+                .Indicator {
+                    position: absolute;
+                    display: flex;
+                    right: .7813vw;
+                    height: .6771vw;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: .5208vw;
+                    line-height: .625vw;
+                    align-items: center;
+                    color: #FFFFFF;
+                }
+            }
+        }
+
+        .VDesc {
+            position: relative;
+            display: inline-flex;
+            width: auto;
+            min-width: 100%;
+            height: auto;
+            border-radius: .2604vw;
+            background-color: rgba(11, 11, 11, 0.95);
+            margin-top: .2604vw;
+            padding: .5vw .6vw;
+            box-sizing: border-box;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+
+            span {
+                display: inline-block;
+                white-space: normal;
+                word-break: break-word;
+                font-weight: 700;
+                font-size: .5208vw;
+                line-height: .625vw;
+                color: #FFFFFF;
+            }
+        }
+    }
+
+    .VRightElements {
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: row;
+        gap: .4167vw;
+
+        .PCategories {
+            position: relative;
+            display: flex;
+            width: 5.2083vw;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgba(11, 11, 11, 0.95);
+            border-radius: .2604vw;
+            overflow: hidden;
+            gap: 0;
+
+            .highlight {
+                position: absolute;
+                left: 0;
+                width: 100%;
+                height: 1.3021vw;
+                background: rgba(var(--menu-color), 0.40);
+                border: .0521vw solid rgb(var(--menu-color));
+                border-radius: .2604vw;
+                transition: transform 0.25s ease, background 0.25s ease;
+                z-index: 0;
+            }
+
+            .PCategory {
+                position: relative;
+                display: flex;
+                text-align: center;
+                width: 100%;
+                height: 1.3021vw;
+                justify-content: center;
+                align-items: center;
+                font-size: 0.65vw;
+                color: white;
+                border-radius: .2604vw;
+                z-index: 1;
+
+                span {
+                    position: absolute;
+                    display: flex;
+                    left: 0.5vw;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: .4688vw;
+                    align-items: center;
+                    color: #FFFFFF;
+                }
+            }
+
+            .PCategory:only-child {
+                position: absolute;
+                display: flex;
+                left: 0vw;
+                font-size: .625vw;
+                padding: 0 0.8vw;
+                justify-content: flex-start;
+            }
+
+            .PCategory:last-child {
+                border-right: none;
+            }
+        }
+
+        .Metadata {
+            position: relative;
+            display: flex;
+            width: 10.4167vw;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: .2604vw;
+            background-color: rgba(11, 11, 11, 0.95);
+            border-radius: .2604vw;
+            padding: .5208vw;
+
+            .Title {
+                position: relative;
+                display: flex;
+                width: 98%;
+                height: .7813vw;
+                justify-content: flex-start;
+                align-items: center;
+                color: rgba(255, 255, 255);
+
+                span {
+                    display: block;
+                    width: 100%;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: .5208vw;
+                    line-height: .7813vw;
+                    text-align: start;
+                }
+            }
+
+            .Line {
+                position: relative;
+                display: flex;
+                width: 98%;
+                height: .013vw;
+                margin-top: .2083vw;
+                background-color: rgba(255, 255, 255, 0.25);
+            }
+
+            .Values {
+                position: relative;
+                display: flex;
+                width: 98%;
+                margin-top: .3125vw;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: .2604vw;
+
+                .Value {
+                    position: relative;
+                    display: flex;
+                    width: 100%;
+                    justify-content: flex-start;
+                    align-items: center;
+
+                    .Key {
+                        position: relative;
+                        display: flex;
+                        height: .7813vw;
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: .5208vw;
+                        line-height: .7813vw;
+                        align-items: center;
+                        color: #FFFFFF;
+                    }
+
+                    .Val {
+                        position: absolute;
+                        display: flex;
+                        right: 0vw;
+                        justify-content: flex-end;
+                        align-items: center;
+                        flex-direction: row;
+                        gap: .2604vw;
+
+                        span {
+                            height: .7813vw;
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: .5208vw;
+                            line-height: .7813vw;
+                            align-items: center;
+                            color: #FFFFFF;
+                        }
+
+                        .Status {
+                            position: relative;
+                            display: flex;
+                            width: .2604vw;
+                            height: .7813vw;
+                            background-color: black;
+                            border-radius: .0781vw;
+                            justify-content: center;
+                            align-items: flex-end;
+                            overflow: hidden;
+
+                            .Progress {
+                                position: absolute;
+                                display: flex;
+                                width: 100%;
+                                bottom: 0vw;
+                                transition: 0.25s height;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

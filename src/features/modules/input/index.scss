@@ -1,0 +1,82 @@
+.Overlay {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.60);
+}
+
+.InputWrapper {
+    position: absolute;
+    display: flex;
+    left: 50%;
+    bottom: 8vw;
+    width: 20.8333vw;
+    height: auto;
+    transform: translateX(-50%);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(10, 10, 10);
+    border: .0521vw solid rgb(10, 10, 10);
+    font-family: "Inter";
+    border-radius: .2604vw;
+    overflow: hidden;
+
+    .Header {
+        position: relative;
+        display: flex;
+        width: 100%;
+        height: 1.6667vw;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+        gap: .3125vw;
+        background-color: black;
+        border-bottom: .0521vw solid rgb(255, 255, 255);
+        font-size: .625vw;
+        font-weight: 450;
+        color: rgb(var(--menu-color));
+
+        i {
+            margin-left: 0.5vw;
+        }
+    }
+    
+    .Body {
+        position: relative;
+        display: flex;
+        width: 100%;
+        height: 1.8229vw;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: .2604vw;
+        font-size: .625vw;
+        font-weight: 400;
+        color: white;
+
+        span {
+            position: absolute;
+            display: flex;
+            left: 0.7vw;
+        }
+    }
+
+    .Body span::after {
+        content: "";
+        display: inline-block;
+        width: .0521vw;
+        height: .625vw;
+        background-color: white;
+        margin-left: 0.1vw;
+        animation: blink 1s steps(2, start) infinite;
+        align-self: center;
+    }
+}
+
+@keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}

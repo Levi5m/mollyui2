@@ -1,0 +1,43 @@
+{
+  "name": "vanta-dui",
+  "homepage": "nui/build",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "start": "vite",
+    "start:game": "vite build --watch",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@iconify/react": "^6.0.2",
+    "@mantine/core": "^5.10.0",
+    "@mantine/dates": "^5.10.0",
+    "@mantine/form": "^6.0.11",
+    "@mantine/hooks": "^5.10.0",
+    "@types/jqueryui": "^1.12.18",
+    "immutability-helper": "^3.1.1",
+    "jquery": "^3.7.1",
+    "jquery-ui": "^1.13.2",
+    "jquery-ui-dist": "^1.13.2",
+    "lodash": "^4.17.21",
+    "pnpm": "^8.9.2",
+    "react": "^18.2.0",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.41.3",
+    "react-icons": "^4.11.0",
+    "sass": "^1.62.0"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.5.19",
+    "@types/lodash": "^4.14.199",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.9",
+    "@vitejs/plugin-react": "^2.2.0",
+    "jqueryui": "^1.11.1",
+    "typescript": "^4.9.3",
+    "vite": "^3.2.4"
+  }
+}

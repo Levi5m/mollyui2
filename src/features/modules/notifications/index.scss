@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Geist:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+.NotificationsWrapper {
+    position: absolute;
+    display: flex;
+    top: 1vw;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+    flex-direction: column;
+    gap: .2604vw;
+    z-index: 9999;
+    pointer-events: none;
+    align-items: center;
+    max-width: none;
+
+    .Notification {
+        position: relative;
+        display: flex;
+        min-width: 13.0208vw;
+        max-width: 20vw;
+        width: fit-content;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        box-sizing: border-box;
+        background: rgb(10, 10, 10);
+        border-radius: .2604vw;
+        opacity: 0;
+        transform: translateY(-1.5vw);
+        transition: opacity 0.5s ease, transform 0.65s ease;
+        gap: .3125vw;
+        overflow: hidden;
+
+        &.enter {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        &.exit {
+            opacity: 0;
+            transform: translateY(-1.5vw);
+        }
+
+        .Header {
+            position: relative;
+            display: flex;
+            width: 100%;
+            height: 1.5625vw;
+            justify-content: flex-start;
+            align-items: center;
+            background-color: black;
+            border-bottom: .0521vw solid white;
+        }
+
+        i {
+            position: relative;
+            display: flex;
+            left: .4167vw;
+            font-style: normal;
+            font-weight: 700;
+            font-size: .5469vw;
+            line-height: .7292vw;
+            display: flex;
+            align-items: center;
+            color: rgb(var(--menu-color));
+            text-shadow: 0vw 0vw .3125vw rgba(var(--menu-color), 0.25);
+        }
+        
+        .Title {
+            position: relative;
+            display: flex;
+            left: .7292vw;
+            height: .7292vw;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-size: .5469vw;
+            line-height: .7292vw;
+            align-items: center;
+            color: rgb(var(--menu-color));
+            text-shadow: 0vw 0vw .3125vw rgba(var(--menu-color), 0.25);
+            margin-top: .0521vw;
+        }
+
+        .Body {
+            position: relative;
+            display: flex;
+            width: 100%;
+            height: auto;
+            padding-left: .5208vw;
+            padding-right: .5208vw;
+            padding-top: .2604vw;
+            padding-bottom: .5208vw;
+        }
+        
+        .NDesc {
+            position: relative;
+            display: inline-block;
+            width: fit-content;
+            max-width: 18vw;
+            font-family: 'Inter';
+            font-weight: 400;
+            font-size: .5469vw;
+            line-height: .625vw;
+            color: white;
+            text-align: left;
+            white-space: normal;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+    }
+}
+
+@keyframes progress {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0%;
+    }
+}
